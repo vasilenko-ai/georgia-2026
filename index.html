@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Семейный маршрут по Тбилиси и Казбеги, 24–31 октября 2026" />
+    <title>Грузия · семейное путешествие</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="К началу страницы">
+        <span class="brand-mark">G</span>
+        <span>Georgia · 2026</span>
+      </a>
+      <nav class="nav" aria-label="Навигация">
+        <a href="#calendar">Календарь</a>
+        <a href="#route">Маршрут</a>
+        <a href="#hotels">Отели</a>
+        <a href="#rocky">Рокки</a>
+        <a href="#packing">Вещи</a>
+      </nav>
+      <button class="print-button" type="button" id="printButton">Распечатать</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img src="assets/georgia-hero.png" alt="Осенний Тбилиси и горы Казбеги" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">24–31 октября 2026 · семейная поездка</p>
+          <h1>Тбилиси.<br />Казбеги.<br />И снова домой.</h1>
+          <p class="hero-lead">Неделя старых улиц, горных дорог, хинкали и прогулок с Рокки.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#route">Смотреть маршрут</a>
+            <span class="countdown" id="countdown">До поездки — считаем дни…</span>
+          </div>
+        </div>
+        <div class="hero-route" aria-label="Краткий маршрут">
+          <span>IST</span><i></i><span>TBS</span><i></i><span>KAZBEGI</span><i></i><span>TBS</span><i></i><span>IST</span>
+        </div>
+      </section>
+
+      <section class="summary section-shell" aria-label="Краткая информация">
+        <article><span class="summary-icon">✦</span><div><strong>8 дней</strong><small>24–31 октября</small></div></article>
+        <article><span class="summary-icon">◌</span><div><strong>4 путешественника</strong><small>Олег, Маша, Миша и Алексей</small></div></article>
+        <article><span class="summary-icon">🐾</span><div><strong>Рокки с нами</strong><small>6 кг · путешествует в салоне</small></div></article>
+        <article><span class="summary-icon">⌁</span><div><strong>2 сценария</strong><small>3 или 2 ночи в Казбеги</small></div></article>
+      </section>
+
+      <section class="section-shell section" id="calendar">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark">Календарь поездки</p>
+            <h2>Восемь дней в одном взгляде</h2>
+          </div>
+          <p>Нажмите на день, чтобы открыть его план и маршрут на карте.</p>
+        </div>
+        <div class="calendar-strip" id="calendarStrip" role="list"></div>
+      </section>
+
+      <section class="scenario-band" aria-labelledby="scenarioTitle">
+        <div class="section-shell scenario-inner">
+          <div>
+            <p class="eyebrow">План можно менять</p>
+            <h2 id="scenarioTitle">Сколько ночей оставить горам?</h2>
+          </div>
+          <div class="scenario-switch" role="group" aria-label="Сценарий поездки">
+            <button class="scenario-button active" type="button" data-scenario="full">
+              <strong>Основной</strong>
+              <span>Казбеги до четверга · 3 ночи</span>
+            </button>
+            <button class="scenario-button" type="button" data-scenario="short">
+              <strong>Сокращённый</strong>
+              <span>Возвращение в среду · 2 ночи</span>
+            </button>
+          </div>
+          <p class="scenario-note" id="scenarioNote"></p>
+        </div>
+      </section>
+
+      <section class="section-shell section route-section" id="route">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow dark">Интерактивный маршрут</p>
+            <h2 id="routeHeading">Вся поездка</h2>
+          </div>
+          <button class="text-button" type="button" id="showAllButton">Показать весь маршрут</button>
+        </div>
+        <div class="route-layout">
+          <div class="map-card">
+            <div id="map" aria-label="Карта маршрута"></div>
+            <div class="map-filters" role="group" aria-label="Слои карты">
+              <button class="map-filter active" type="button" data-filter="all">Всё</button>
+              <button class="map-filter" type="button" data-filter="travel">Переезды</button>
+              <button class="map-filter" type="button" data-filter="walk">Прогулки</button>
+              <button class="map-filter" type="button" data-filter="stays">Отели</button>
+            </div>
+            <div class="map-legend">
+              <span><i class="legend-road"></i>Переезд</span>
+              <span><i class="legend-walk"></i>Прогулка</span>
+              <span><i class="legend-hotel"></i>Отель</span>
+            </div>
+            <p class="map-caption">Маршруты прогулок ориентировочные — нажмите на точку, чтобы увидеть название.</p>
+          </div>
+          <article class="day-panel" id="dayPanel" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="section-shell section" id="hotels">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark">Где живём</p>
+            <h2>Две брони готовы. Одна — выбирается.</h2>
+          </div>
+          <p>На публичной странице не храним PIN-коды и номера подтверждений.</p>
+        </div>
+        <div class="hotel-grid">
+          <article class="hotel-card confirmed">
+            <div class="hotel-top"><span>24–26 октября</span><em>Подтверждено</em></div>
+            <h3>Kisi Boutique Hotel</h3>
+            <p>Старый Тбилиси · 2 номера · завтрак</p>
+            <ul><li>Double для родителей</li><li>Twin для детей</li><li>Pet-friendly · запрос отправлен</li></ul>
+            <div class="booking-terms">
+              <strong>Бесплатная отмена до 21 окт · 23:59</strong>
+              <span>Время отеля. С 22 октября — штраф 355,32 GEL за номер.</span>
+              <span>Изменение дат этой брони невозможно.</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kisi+Boutique+Hotel+Tbilisi" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
+          </article>
+          <article class="hotel-card confirmed mountain-card">
+            <div class="hotel-top"><span id="kazbegiHotelDates">26–29 октября</span><em class="status-review">Число ночей уточняем</em></div>
+            <h3>Rooms Hotel Kazbegi</h3>
+            <p>Степанцминда · Mountain View · завтрак</p>
+            <ul><li>Double Mountain View</li><li>Twin Mountain View</li><li>Рокки — в Double Room</li></ul>
+            <div class="booking-terms">
+              <strong>Бесплатная отмена до 23 окт · 23:59</strong>
+              <span>Время отеля. С 24 октября — стоимость первой ночи.</span>
+              <span>Изменение — через Booking, по доступности; лучше до этого срока.</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rooms+Hotel+Kazbegi" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
+          </article>
+          <article class="hotel-card decision">
+            <div class="hotel-top"><span id="lastHotelDates">29–31 октября</span><em>Выбираем</em></div>
+            <h3>Последний Тбилиси</h3>
+            <div class="choice-list">
+              <button class="hotel-choice active" type="button" data-hotel="red">
+                <span><strong>Radisson RED</strong><small>Практично · просторнее · ровный район</small></span><b>RED</b>
+              </button>
+              <button class="hotel-choice" type="button" data-hotel="rooms">
+                <span><strong>Rooms Hotel Tbilisi</strong><small>Vera · атмосфера · рядом Stamba</small></span><b>ROOMS</b>
+              </button>
+            </div>
+            <p class="choice-note" id="hotelChoiceNote"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="rocky-section" id="rocky">
+        <div class="section-shell rocky-layout">
+          <div class="rocky-copy">
+            <p class="eyebrow">Рокки тоже путешественник</p>
+            <h2>Документы, прогулки и комфорт</h2>
+            <p>В календаре отмечено, когда Рокки идёт с нами, а когда отдыхает в отеле. Главный обязательный пункт — NFA утром 30 октября.</p>
+            <a class="button light" href="#calendar">Посмотреть день NFA</a>
+          </div>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Микрочип и турецкий ветпаспорт</label>
+            <label><input type="checkbox" checked /> Прививка от бешенства и титры</label>
+            <label><input type="checkbox" /> Подтверждение PETC в обе стороны</label>
+            <label><input type="checkbox" /> Лежанка в Rooms Kazbegi</label>
+            <label><input type="checkbox" /> Справка NFA 30 октября</label>
+            <label><input type="checkbox" /> Корм, переноска и пакеты</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell section packing-section" id="packing">
+        <div class="section-heading packing-heading">
+          <div>
+            <p class="eyebrow dark">Собираем вещи</p>
+            <h2>Два чемодана. Четыре рюкзака.</h2>
+          </div>
+          <div class="packing-progress" aria-live="polite">
+            <strong id="packingProgress">0 из 0</strong>
+            <span>вещей отмечено</span>
+          </div>
+        </div>
+        <p class="packing-help">Перетащите карточку в нужную сумку. На телефоне можно нажать на карточку, а затем на сумку. Кружок отмечает, что вещь уже упакована.</p>
+        <form class="packing-add" id="packingAddForm">
+          <label class="sr-only" for="packingNewItem">Добавить вещь</label>
+          <input id="packingNewItem" name="item" autocomplete="off" placeholder="Например: любимая книга" />
+          <button type="submit">Добавить в общий список</button>
+          <button class="packing-reset" type="button" id="packingReset">Сбросить</button>
+        </form>
+
+        <div class="packing-board">
+          <section class="packing-pool packing-zone" data-location="pool" aria-labelledby="poolTitle">
+            <header><div><span>Общий список</span><h3 id="poolTitle">Ещё не распределено</h3></div><b class="zone-count" data-count="pool">0</b></header>
+            <div class="packing-items" data-items="pool"></div>
+            <p class="zone-empty">Перетащите сюда вещь, чтобы вернуть её в общий список.</p>
+          </section>
+
+          <div class="luggage-area">
+            <div class="suitcase-grid">
+              <section class="packing-zone luggage-card suitcase-one" data-location="case1">
+                <header><span>Чемодан 1</span><b class="zone-count" data-count="case1">0</b></header>
+                <div class="packing-items" data-items="case1"></div><p class="zone-empty">Перетащите вещи сюда</p>
+              </section>
+              <section class="packing-zone luggage-card suitcase-two" data-location="case2">
+                <header><span>Чемодан 2</span><b class="zone-count" data-count="case2">0</b></header>
+                <div class="packing-items" data-items="case2"></div><p class="zone-empty">Перетащите вещи сюда</p>
+              </section>
+            </div>
+            <h3 class="backpack-title">Личные рюкзаки</h3>
+            <div class="backpack-grid">
+              <section class="packing-zone backpack-card" data-location="bp-oleg"><header><span>🎒 Олег</span><b class="zone-count" data-count="bp-oleg">0</b></header><div class="packing-items" data-items="bp-oleg"></div><p class="zone-empty">Пока пусто</p></section>
+              <section class="packing-zone backpack-card" data-location="bp-masha"><header><span>🎒 Маша</span><b class="zone-count" data-count="bp-masha">0</b></header><div class="packing-items" data-items="bp-masha"></div><p class="zone-empty">Пока пусто</p></section>
+              <section class="packing-zone backpack-card" data-location="bp-misha"><header><span>🎒 Миша</span><b class="zone-count" data-count="bp-misha">0</b></header><div class="packing-items" data-items="bp-misha"></div><p class="zone-empty">Пока пусто</p></section>
+              <section class="packing-zone backpack-card" data-location="bp-alexey"><header><span>🎒 Алексей</span><b class="zone-count" data-count="bp-alexey">0</b></header><div class="packing-items" data-items="bp-alexey"></div><p class="zone-empty">Пока пусто</p></section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell section flight-section">
+        <div class="flight-card">
+          <div><small>Суббота · 24 октября</small><strong>IST <span>13:20</span></strong><i>→</i><strong>TBS <span>16:40</span></strong></div>
+          <div><small>Суббота · 31 октября</small><strong>TBS <span>18:00</span></strong><i>→</i><strong>IST <span>19:30</span></strong></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="section-shell footer-inner">
+        <div><strong>Georgia · family trip</strong><span>Черновик семейного плана</span></div>
+        <p>Последнее обновление: 8 октября 2026</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
