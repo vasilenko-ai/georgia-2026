@@ -9,6 +9,10 @@ const places = {
   rike: { name: "Rike Park", coords: [41.6932, 44.8112], category: "walk", icon: "♧" },
   narikala: { name: "Нарикала", coords: [41.6879, 44.8083], category: "sight", icon: "♜", major: true },
   sololaki: { name: "Сололаки", coords: [41.6904, 44.8007], category: "walk", icon: "•" },
+  gallery27: { name: "Gallery 27", coords: [41.6882, 44.8061], category: "sight", icon: "◇" },
+  gudiashvili: { name: "Площадь Гудиашвили", coords: [41.6918, 44.8013], category: "walk", icon: "•" },
+  nationalGallery: { name: "Национальная галерея", coords: [41.6998, 44.7984], category: "sight", icon: "▣", major: true },
+  dryBridge: { name: "Сухой мост", coords: [41.7022, 44.8022], category: "walk", icon: "✦" },
   zhinvali: { name: "Жинвали", coords: [42.1455, 44.7714], category: "sight", icon: "◒" },
   ananuri: { name: "Ананури", coords: [42.1638, 44.7032], category: "sight", icon: "♜", major: true },
   gudauri: { name: "Арка Дружбы", coords: [42.4924, 44.4527], category: "sight", icon: "◎", major: true },
@@ -20,10 +24,15 @@ const places = {
   gveleti: { name: "Гвелетский водопад", coords: [42.7047, 44.6152], category: "walk", icon: "💧" },
   jvari: { name: "Монастырь Джвари", coords: [41.8385, 44.7331], category: "sight", icon: "⛪", major: true },
   mtskheta: { name: "Мцхета", coords: [41.8427, 44.7206], category: "sight", icon: "M", major: true },
-  radisson: { name: "Radisson RED", coords: [41.7073, 44.7995], category: "hotel", icon: "R", major: true },
   roomsTbilisi: { name: "Rooms Hotel Tbilisi", coords: [41.7064, 44.7894], category: "hotel", icon: "R", major: true },
   stamba: { name: "Stamba / Photography Museum", coords: [41.7067, 44.7890], category: "walk", icon: "▣", major: true },
   vera: { name: "Vera", coords: [41.7092, 44.7865], category: "walk", icon: "•" },
+  moreIsLove: { name: "MORE is LOVE", coords: [41.7072, 44.7926], category: "sight", icon: "M" },
+  wineFactory: { name: "Wine Factory N1", coords: [41.7087, 44.7817], category: "sight", icon: "W", major: true },
+  ieri: { name: "IERI Store", coords: [41.7085, 44.7815], category: "sight", icon: "I" },
+  whiteStudio: { name: "White Studio", coords: [41.7092, 44.7808], category: "sight", icon: "◇" },
+  vintages: { name: "8000 Vintages", coords: [41.7023, 44.7963], category: "sight", icon: "8" },
+  veraPark: { name: "Парк Вера", coords: [41.7082, 44.7847], category: "walk", icon: "♧" },
   nfa: { name: "NFA", coords: [41.7584, 44.7738], category: "document", icon: "✓", major: true },
 };
 
@@ -37,15 +46,15 @@ const sharedDays = {
   "2026-10-24": {
     dow: "суббота", date: "24", place: "Тбилиси", short: "Прилёт и тихий вечер", kind: "city",
     summary: "Первый вечер без спешки: получить багаж, пройти контроль с Рокки и спокойно заселиться в Kisi.",
-    routes: [{ mode: "travel", label: "Аэропорт → Kisi", points: ["airport", "kisi"] }],
-    timeline: [["13:20", "Вылет из IST", "Turkish Airlines"], ["16:40", "Прилёт в TBS", "Граница, багаж и документы Рокки"], ["19:00", "Kisi и ужин", "Короткая прогулка по Абанотубани"]],
+    routes: [{ mode: "travel", label: "Аэропорт → Kisi", points: ["airport", "kisi"] }, { mode: "walk", label: "Вечерняя петля · 1,8 км", points: ["kisi", "abanotubani", "waterfall", "meidan", "kisi"] }],
+    timeline: [["13:20", "Вылет из IST", "Turkish Airlines"], ["16:40", "Прилёт в TBS", "Граница, багаж и документы Рокки"], ["19:15", "Заселение в Kisi", "От аэропорта 25–40 минут на машине"], ["20:00", "Первый круг по Старому городу", "1,8 км · 35 минут чистой ходьбы · бесплатно"]],
     tags: ["✈️ перелёт", "🐕 Рокки с нами", "🏨 Kisi"],
   },
   "2026-10-25": {
     dow: "воскресенье", date: "25", place: "Тбилиси", short: "Старый город", kind: "city",
     summary: "Главный прогулочный день: утром пробежка, затем Старый город вместе с Рокки; после обеда музеи и Сололаки.",
-    routes: [{ mode: "walk", label: "Прогулка по Старому городу", points: ["kisi", "abanotubani", "waterfall", "meidan", "sioni", "peaceBridge", "rike", "narikala", "sololaki", "kisi"] }],
-    timeline: [["08:00", "Пробежка и завтрак", "Абанотубани → Рике → набережная"], ["10:30", "Прогулка с Рокки", "Серные бани, водопад, Мейдан и Мост Мира"], ["14:00", "Хинкали и город", "Рокки отдыхает в отеле; музей или Сололаки"]],
+    routes: [{ mode: "walk", label: "С Рокки · 2,5 км", points: ["kisi", "abanotubani", "waterfall", "meidan", "sioni", "peaceBridge", "rike", "kisi"] }, { mode: "local", label: "После обеда · галерея и Сололаки", points: ["kisi", "gallery27", "gudiashvili", "nationalGallery", "sololaki", "kisi"] }, { mode: "local", label: "Опция: канатная дорога", points: ["rike", "narikala"] }],
+    timeline: [["08:00", "Пробежка и завтрак", "Абанотубани → Рике → набережная · 5–6 км"], ["10:30", "Прогулка с Рокки", "2,5 км · 40 минут чистой ходьбы · 2 часа с остановками"], ["13:00", "Рокки отдыхает в Kisi", "Хинкали, затем город без собаки"], ["15:30", "Национальная галерея", "1–1,5 часа · семья ≈ 11 GEL · вход до 17:30"], ["17:15", "Сололаки и Gallery 27", "Парадные, площадь Гудиашвили и локальный дизайн"]],
     tags: ["🏃 пробежка", "🐕 прогулка", "🥟 хинкали"],
   },
   "2026-10-26": {
@@ -65,15 +74,15 @@ const sharedDays = {
   "2026-10-30": {
     dow: "пятница", date: "30", place: "Тбилиси", short: "NFA и Vera", kind: "city",
     summary: "Утром получаем ветеринарную справку, затем возвращаем Рокки в отель и идём в Stamba и по Vera.",
-    routes: [{ mode: "travel", label: "Отель → NFA → отель", points: ["lastHotel", "nfa", "lastHotel"] }, { mode: "walk", label: "Vera и Stamba", points: ["lastHotel", "stamba", "vera", "lastHotel"] }],
-    timeline: [["09:00", "NFA вместе с Рокки", "Marshal Gelovani Ave 36a; оставить свободным всё утро"], ["13:00", "Обед и отдых", "Вернуться в отель и оставить Рокки"], ["15:00", "Stamba и Vera", "Photography & Multimedia Museum, магазины и кофе"]],
-    tags: ["📄 справка", "🐕 обязательно взять", "📷 музей"],
+    routes: [{ mode: "travel", label: "Rooms → NFA → Rooms", points: ["roomsTbilisi", "nfa", "roomsTbilisi"] }, { mode: "walk", label: "Vera, музей и магазины · 3,5–4 км", points: ["roomsTbilisi", "stamba", "moreIsLove", "nationalGallery", "vintages", "roomsTbilisi"] }],
+    timeline: [["09:00", "NFA вместе с Рокки", "Marshal Gelovani Ave 36a · 20–30 минут на такси в одну сторону"], ["13:00", "Обед и отдых", "Вернуться в Rooms и оставить Рокки"], ["14:30", "TPMM в соседнем Stamba", "45–60 минут · вход бесплатный · работает до 19:00"], ["15:45", "Vera и локальные магазины", "MORE is LOVE → Rustaveli → 8000 Vintages · 3,5–4 км"]],
+    tags: ["📄 справка", "🐕 обязательно взять", "📷 TPMM бесплатно", "🛍 локальные бренды"],
   },
   "2026-10-31": {
     dow: "суббота", date: "31", place: "Домой", short: "TBS → IST", kind: "flight",
     summary: "Неспешное утро, последний обед и ранний выезд в аэропорт с запасом на оформление PETC.",
-    routes: [{ mode: "travel", label: "Отель → аэропорт TBS", points: ["lastHotel", "airport"] }],
-    timeline: [["10:00", "Завтрак и прогулка", "Без музеев и жёсткого расписания"], ["14:00", "Выезд в аэропорт", "Быть на месте примерно за три часа"], ["18:00", "Вылет в Стамбул", "Прилёт в IST в 19:30"]],
+    routes: [{ mode: "walk", label: "Утренняя петля · 3 км", points: ["roomsTbilisi", "veraPark", "vera", "roomsTbilisi"] }, { mode: "travel", label: "Rooms → аэропорт TBS", points: ["roomsTbilisi", "airport"] }],
+    timeline: [["08:00", "Пробежка или прогулка", "Парк Вера · около 3 км · Рокки с нами"], ["10:00", "Завтрак и последний кофе", "Check-out до 12:00; багаж оставить в отеле"], ["14:15", "Выезд в аэропорт", "Дорога 30–45 минут; запас на PETC около трёх часов"], ["18:00", "Вылет в Стамбул", "Прилёт в IST в 19:30"]],
     tags: ["✈️ перелёт", "🐕 PETC", "🏠 домой"],
   },
 };
@@ -84,15 +93,15 @@ const scenarios = {
     kazbegiDates: "26–29 октября", lastHotelDates: "29–31 октября",
     days: {
       "2026-10-28": { dow: "среда", date: "28", place: "Казбеги", short: "Погодный резерв", kind: "mountain", summary: "Второй горный день: Дарьяли и Гвелети при сухой тропе либо Сно и неспешный отдых.", routes: [{ mode: "local", label: "Дарьяли и Гвелети", points: ["roomsKazbegi", "gveleti", "dariali"] }, { mode: "walk", label: "Тропа к водопаду", points: ["gveleti", "dariali"] }, { mode: "local", label: "Альтернатива: Сно", points: ["roomsKazbegi", "sno"] }], timeline: [["10:00", "Выбираем по погоде", "Дарьяльское ущелье и Гвелети или Сно"], ["14:00", "Обед", "Кафе в Степанцминде"], ["16:00", "Свободное время", "Вид, бассейн и книги у камина"]], tags: ["🌦 погода B", "🐕 прогулка", "🔥 спокойный день"] },
-      "2026-10-29": { dow: "четверг", date: "29", place: "В Тбилиси", short: "Мцхета и Джвари", kind: "road", summary: "Возвращаемся без спешки и превращаем дорогу в экскурсионный день.", routes: [{ mode: "travel", label: "Казбеги → Мцхета → Тбилиси", points: ["roomsKazbegi", "jvari", "mtskheta", "lastHotel"] }], timeline: [["09:30", "Выезд из Казбеги", "Частный водитель"], ["13:00", "Джвари и Мцхета", "Прогулка и обед"], ["17:00", "Тбилиси", "Заселение в выбранный отель"]], tags: ["🚗 переезд", "⛪ Мцхета", "🏨 отель выбираем"] },
+      "2026-10-29": { dow: "четверг", date: "29", place: "В Тбилиси", short: "Мцхета и Джвари", kind: "road", summary: "Возвращаемся без спешки, заселяемся в Rooms и вечером знакомимся с Vera.", routes: [{ mode: "travel", label: "Казбеги → Мцхета → Rooms", points: ["roomsKazbegi", "jvari", "mtskheta", "roomsTbilisi"] }, { mode: "walk", label: "Вечерняя Vera · 2,2 км", points: ["roomsTbilisi", "moreIsLove", "wineFactory", "ieri", "whiteStudio", "roomsTbilisi"] }], timeline: [["09:30", "Выезд из Казбеги", "Частный водитель"], ["13:00", "Джвари и Мцхета", "Прогулка и обед"], ["17:00", "Rooms Hotel Tbilisi", "Заселение · King + Twin Garden View"], ["18:30", "Vera с Рокки", "Wine Factory N1 и Petriashvili · 2,2 км, около 35 минут ходьбы"]], tags: ["🚗 переезд", "⛪ Мцхета", "🏨 Rooms Tbilisi", "🐕 прогулка"] },
     },
   },
   short: {
     note: "Две ночи — компактнее и дешевле, но на Гергети остаётся только одно полноценное погодное окно. В Тбилиси появляется дополнительный день.",
     kazbegiDates: "26–28 октября", lastHotelDates: "28–31 октября",
     days: {
-      "2026-10-28": { dow: "среда", date: "28", place: "В Тбилиси", short: "Мцхета и Джвари", kind: "road", summary: "Утром используем последний погодный шанс, затем едем через Джвари и Мцхету в Тбилиси.", routes: [{ mode: "local", label: "Резерв: Гергети", points: ["roomsKazbegi", "gergeti"] }, { mode: "travel", label: "Казбеги → Тбилиси", points: ["roomsKazbegi", "jvari", "mtskheta", "lastHotel"] }], timeline: [["09:00", "Резерв на Гергети", "Только если вторник был облачным"], ["11:00", "Выезд из Казбеги", "Остановки по дороге"], ["15:00", "Джвари и Мцхета", "Короткая прогулка и поздний обед"], ["18:30", "Тбилиси", "Заселение и отдых"]], tags: ["🚗 переезд", "🌦 короткий резерв", "🏨 отель выбираем"] },
-      "2026-10-29": { dow: "четверг", date: "29", place: "Тбилиси", short: "Город без спешки", kind: "city", summary: "Дополнительный день в городе: музей, рынок, Sololaki или короткая гастрономическая прогулка.", routes: [{ mode: "walk", label: "Vera и Stamba", points: ["lastHotel", "stamba", "vera", "lastHotel"] }, { mode: "local", label: "До Старого города", points: ["lastHotel", "sololaki", "meidan"] }], timeline: [["09:00", "Пробежка и завтрак", "Маршрут зависит от выбранного отеля"], ["11:30", "Музей или рынок", "Один большой пункт, без гонки"], ["15:00", "Sololaki и гастрономия", "Кофе, магазины и ранний ужин"]], tags: ["🏙 дополнительный город", "🐕 прогулка", "🍷 гастрономия"] },
+      "2026-10-28": { dow: "среда", date: "28", place: "В Тбилиси", short: "Мцхета и Джвари", kind: "road", summary: "Утром используем последний погодный шанс, затем едем через Джвари и Мцхету в Тбилиси.", routes: [{ mode: "local", label: "Резерв: Гергети", points: ["roomsKazbegi", "gergeti"] }, { mode: "travel", label: "Казбеги → Rooms Tbilisi", points: ["roomsKazbegi", "jvari", "mtskheta", "roomsTbilisi"] }], timeline: [["09:00", "Резерв на Гергети", "Только если вторник был облачным"], ["11:00", "Выезд из Казбеги", "Остановки по дороге"], ["15:00", "Джвари и Мцхета", "Короткая прогулка и поздний обед"], ["18:30", "Rooms Hotel Tbilisi", "Заселение и отдых"]], tags: ["🚗 переезд", "🌦 короткий резерв", "🏨 Rooms Tbilisi"] },
+      "2026-10-29": { dow: "четверг", date: "29", place: "Тбилиси", short: "Город без спешки", kind: "city", summary: "Дополнительный день: Vera с Рокки, Национальная галерея и магазины локальных дизайнеров.", routes: [{ mode: "walk", label: "Утро с Рокки · 2 км", points: ["roomsTbilisi", "veraPark", "wineFactory", "roomsTbilisi"] }, { mode: "local", label: "Галерея и Сололаки", points: ["roomsTbilisi", "nationalGallery", "gudiashvili", "gallery27", "meidan"] }], timeline: [["09:00", "Пробежка и завтрак", "Vera Park и тихие улицы · Рокки с нами"], ["11:30", "Национальная галерея", "1–1,5 часа · семья ≈ 11 GEL · без Рокки"], ["14:00", "Sololaki и Gallery 27", "Парадные, локальные украшения и кофе"], ["17:00", "Wine Factory N1", "Вернуться к Rooms пешком или на такси"]], tags: ["🏙 дополнительный город", "🐕 прогулка", "🎨 музей", "🍷 гастрономия"] },
     },
   },
 };
@@ -101,7 +110,6 @@ let currentScenario = "full";
 let selectedDate = "2026-10-24";
 let selectedMapDay = null;
 let activeMapFilter = "all";
-let activeHotel = "red";
 let map;
 let layerGroup;
 
@@ -122,9 +130,7 @@ function initMap() {
   renderMap();
 }
 
-function resolveKey(key) {
-  return key === "lastHotel" ? (activeHotel === "rooms" ? "roomsTbilisi" : "radisson") : key;
-}
+function resolveKey(key) { return key === "lastHotel" ? "roomsTbilisi" : key; }
 
 function markerIcon(place) {
   return L.divIcon({ className: "route-marker-wrap", html: `<span class="route-marker ${place.category}">${place.icon}</span>`, iconSize: [32, 28], iconAnchor: [16, 14] });
@@ -217,24 +223,6 @@ function setScenario(name) {
 
 function syncMapFilters() {
   document.querySelectorAll(".map-filter").forEach((button) => button.classList.toggle("active", button.dataset.filter === activeMapFilter));
-}
-
-function initHotelChoice() {
-  const note = document.getElementById("hotelChoiceNote");
-  const copy = {
-    red: "Radisson RED: удобнее для пробежек и проще по семейной логистике.",
-    rooms: "Rooms Tbilisi: атмосфернее, рядом Vera и Stamba, но нужен ответ по Рокки.",
-  };
-  document.querySelectorAll(".hotel-choice").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".hotel-choice").forEach((item) => item.classList.remove("active"));
-      button.classList.add("active");
-      activeHotel = button.dataset.hotel;
-      note.textContent = copy[button.dataset.hotel];
-      renderMap();
-    });
-  });
-  note.textContent = copy.red;
 }
 
 function initCountdown() {
@@ -425,7 +413,6 @@ document.getElementById("printButton").addEventListener("click", () => window.pr
 renderCalendar();
 renderDayPanel();
 setScenario("full");
-initHotelChoice();
 initCountdown();
 initPacking();
 initMap();

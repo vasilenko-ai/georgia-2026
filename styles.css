@@ -146,6 +146,31 @@ h3 { font-size: 30px; line-height: 1.1; }
 .day-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; padding-top: 22px; }
 .day-tags span { border-radius: 999px; background: var(--paper); padding: 7px 10px; font-size: 11px; font-weight: 700; }
 
+.city-guide { background: var(--forest); color: white; }
+.city-guide .section-heading > p { color: rgba(255,255,255,.67); }
+.guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.guide-card, .guide-prices { border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); padding: 28px; background: rgba(255,255,255,.055); }
+.guide-card.featured { background: var(--white); color: var(--ink); }
+.guide-date { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.guide-date strong { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--wine); color: white; font-family: Georgia, serif; font-size: 25px; font-weight: 500; }
+.guide-date span { text-transform: uppercase; letter-spacing: .12em; font-size: 10px; opacity: .66; }
+.guide-card h3, .guide-prices h3 { margin: 0 0 13px; }
+.guide-route { min-height: 48px; color: rgba(255,255,255,.72); line-height: 1.55; }
+.featured .guide-route { color: var(--muted); }
+.guide-metrics { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0; }
+.guide-metrics span { border-radius: 999px; padding: 6px 9px; background: rgba(255,255,255,.1); font-size: 10px; font-weight: 800; }
+.featured .guide-metrics span { background: var(--paper); }
+.guide-card ol { margin: 20px 0; padding-left: 20px; }
+.guide-card li { margin: 10px 0; line-height: 1.5; }
+.guide-note { margin: 24px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.15); color: #f0d39d; font-size: 12px; line-height: 1.5; }
+.featured .guide-note { border-color: var(--line); color: var(--wine); }
+.guide-prices { background: var(--wine-dark); }
+.guide-prices dl { margin: 24px 0; }
+.guide-prices dl div { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+.guide-prices dt { font-weight: 800; }
+.guide-prices dd { margin: 0; color: rgba(255,255,255,.7); text-align: right; }
+.guide-prices > p:last-child { color: rgba(255,255,255,.58); font-size: 11px; line-height: 1.5; }
+
 .hotel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .hotel-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; min-height: 390px; display: flex; flex-direction: column; }
 .hotel-card.mountain-card { background: var(--blue); color: white; }
@@ -164,6 +189,7 @@ h3 { font-size: 30px; line-height: 1.1; }
 .mountain-card .booking-terms { background: rgba(255,255,255,.11); color: white; }
 .mountain-card .booking-terms strong { color: #ffe1ab; }
 .mountain-card .booking-terms span { color: rgba(255,255,255,.74); }
+.hotel-card.city-card { background: #e5ded0; }
 .choice-list { display: grid; gap: 8px; margin-top: 18px; }
 .hotel-choice { display: flex; justify-content: space-between; align-items: center; text-align: left; border: 1px solid var(--line); background: transparent; border-radius: 14px; padding: 14px; cursor: pointer; color: var(--ink); }
 .hotel-choice span strong, .hotel-choice span small { display: block; }
@@ -171,6 +197,23 @@ h3 { font-size: 30px; line-height: 1.1; }
 .hotel-choice b { font-size: 10px; letter-spacing: .1em; }
 .hotel-choice.active { border-color: var(--wine); background: rgba(123,37,54,.06); }
 .choice-note { font-size: 13px; margin-top: 15px !important; }
+
+.shopping-section { background: #e7dfd2; }
+.shop-groups { display: grid; gap: 18px; }
+.shop-group { display: grid; grid-template-columns: .55fr 1.45fr; gap: 32px; padding: 30px; border: 1px solid rgba(30,41,37,.13); border-radius: var(--radius); background: rgba(255,253,248,.56); }
+.shop-group > header { display: flex; gap: 16px; align-items: start; }
+.shop-group > header > span { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--wine); color: white; font-size: 11px; font-weight: 800; }
+.shop-group h3 { margin: 0 0 5px; font-size: 28px; }
+.shop-group header p { margin: 0; color: var(--muted); font-size: 12px; }
+.shop-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.shop-list article { min-width: 0; padding: 18px; border-radius: 17px; background: var(--white); display: flex; flex-direction: column; }
+.shop-list h4 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 21px; }
+.shop-list p { margin: 0 0 16px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.shop-list span { display: block; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); color: var(--forest); font-size: 10px; line-height: 1.45; font-weight: 750; }
+.shop-list a { margin-top: 10px; color: var(--wine); font-size: 11px; font-weight: 800; }
+.wine-group { background: var(--wine-dark); color: white; }
+.wine-group header p { color: rgba(255,255,255,.62); }
+.wine-group .shop-list article { color: var(--ink); }
 
 .rocky-section { background: var(--wine-dark); color: white; padding-block: 90px; }
 .rocky-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; align-items: center; }
@@ -260,6 +303,8 @@ footer { border-top: 1px solid var(--line); padding-block: 30px; }
   .map-card { min-height: 480px; }
   .hotel-grid { grid-template-columns: 1fr; }
   .hotel-card { min-height: 320px; }
+  .guide-grid { grid-template-columns: 1fr; }
+  .shop-group { grid-template-columns: 1fr; }
   .packing-board { grid-template-columns: 1fr; }
   .packing-pool { min-height: 0; }
 }
@@ -285,6 +330,9 @@ footer { border-top: 1px solid var(--line); padding-block: 30px; }
   .map-filters { max-width: calc(100% - 72px); overflow-x: auto; }
   .day-panel { padding: 24px; }
   .checklist { grid-template-columns: 1fr; }
+  .guide-card, .guide-prices { padding: 22px; }
+  .shop-group { padding: 20px; }
+  .shop-list { grid-template-columns: 1fr; }
   .packing-heading { display: flex; align-items: end; }
   .packing-progress { min-width: 128px; }
   .packing-add { flex-wrap: wrap; }

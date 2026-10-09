@@ -7,7 +7,7 @@
     <title>Грузия · семейное путешествие</title>
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="styles.css?v=9" />
   </head>
   <body>
     <header class="topbar">
@@ -18,7 +18,9 @@
       <nav class="nav" aria-label="Навигация">
         <a href="#calendar">Календарь</a>
         <a href="#route">Маршрут</a>
+        <a href="#tbilisi-guide">Тбилиси по дням</a>
         <a href="#hotels">Отели</a>
+        <a href="#shopping">Магазины</a>
         <a href="#rocky">Рокки</a>
         <a href="#packing">Вещи</a>
       </nav>
@@ -109,11 +111,77 @@
         </div>
       </section>
 
+      <section class="city-guide" id="tbilisi-guide">
+        <div class="section-shell section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Тбилиси по дням</p>
+              <h2>Маршруты без гонки</h2>
+            </div>
+            <p>Время ходьбы указано без остановок. На прогулки с видами, кофе и фотографиями лучше закладывать в два-три раза больше.</p>
+          </div>
+          <div class="guide-grid">
+            <article class="guide-card">
+              <div class="guide-date"><strong>24</strong><span>суббота · вечер</span></div>
+              <h3>Первое знакомство</h3>
+              <p class="guide-route">Kisi → Абанотубани → водопад Легвтахеви → Мейдан → Kisi</p>
+              <div class="guide-metrics"><span>1,8 км</span><span>35 мин пешком</span><span>1–1,5 часа с остановками</span></div>
+              <ol><li>Серные купола и Орбелиановская баня снаружи.</li><li>Узкое ущелье и подсвеченный водопад.</li><li>Мейдан и первый ужин рядом с отелем.</li></ol>
+              <p class="guide-note">Бесплатно · весь маршрут подходит для Рокки.</p>
+            </article>
+            <article class="guide-card featured">
+              <div class="guide-date"><strong>25</strong><span>воскресенье · полный день</span></div>
+              <h3>Старый город и искусство</h3>
+              <p class="guide-route">Kisi → Легвтахеви → Сиони → Мост Мира → Рике → Нарикала → Сололаки → Национальная галерея</p>
+              <div class="guide-metrics"><span>5–6 км</span><span>1 ч 25 мин пешком</span><span>целый день</span></div>
+              <ol><li><b>10:30–12:45:</b> прогулка с Рокки до Рике через Старый город.</li><li><b>13:00:</b> вернуть Рокки в Kisi и пообедать.</li><li><b>15:30–17:00:</b> Национальная галерея — Пиросмани и две временные выставки: Ерванд Кочар и Радиш Тордия.</li><li><b>17:15:</b> парадные Сололаки, площадь Гудиашвили и кофе.</li></ol>
+              <p class="guide-note">Галерея: 5 GEL взрослый, 0,5 GEL школьник; семье ≈ 11 GEL. Воскресенье 10:00–18:00, вход до 17:30. Животные запрещены.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-date"><strong>29</strong><span>четверг · вечер</span></div>
+              <h3>Вера после дороги</h3>
+              <p class="guide-route">Rooms → ул. Киачели → Wine Factory N1 → ул. Петриашвили → Rooms</p>
+              <div class="guide-metrics"><span>2,2 км</span><span>35 мин пешком</span><span>1,5–2 часа</span></div>
+              <ol><li>Заселиться и дать Рокки отдохнуть после переезда.</li><li>Пройти по тихим улицам Vera до исторической винной фабрики.</li><li>Посмотреть IERI и White Studio, если магазины ещё открыты.</li></ol>
+              <p class="guide-note">Бесплатная прогулка · удобно пройти с Рокки; дегустацию оставить взрослым по очереди.</p>
+            </article>
+            <article class="guide-card featured">
+              <div class="guide-date"><strong>30</strong><span>пятница · документы и город</span></div>
+              <h3>NFA, фотография и магазины</h3>
+              <p class="guide-route">Rooms ⇄ NFA на такси · затем Stamba/TPMM → MORE is LOVE → Rustaveli → 8000 Vintages</p>
+              <div class="guide-metrics"><span>3,5–4 км</span><span>55 мин пешком</span><span>после 14:00</span></div>
+              <ol><li><b>09:00–12:00:</b> NFA с Рокки; дорога на такси обычно 20–30 минут в одну сторону.</li><li><b>14:30:</b> оставить Рокки в Rooms и зайти в TPMM в соседнем Stamba.</li><li><b>15:30–18:30:</b> MORE is LOVE, проспект Руставели, Национальная галерея как запасной вариант и винный магазин.</li></ol>
+              <p class="guide-note">TPMM: бесплатно, в пятницу 12:00–19:00. Текущую выставку проверить накануне.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-date"><strong>31</strong><span>суббота · до вылета</span></div>
+              <h3>Парк, кофе и домой</h3>
+              <p class="guide-route">Rooms → парк Вера → проспект Руставели → Rooms → TBS</p>
+              <div class="guide-metrics"><span>3 км</span><span>45 мин пешком</span><span>утро до 12:00</span></div>
+              <ol><li>Пробежка или спокойная прогулка с Рокки.</li><li>Завтрак, последний кофе и check-out до 12:00.</li><li>Оставить багаж, пообедать рядом и выехать в аэропорт в 14:15.</li></ol>
+              <p class="guide-note">На рейс 18:00 — запас около трёх часов на PETC и формальности.</p>
+            </article>
+            <aside class="guide-prices">
+              <p class="eyebrow">Полезные цены</p>
+              <h3>Что заложить</h3>
+              <dl>
+                <div><dt>Рике → Нарикала</dt><dd>2,5 GEL / человек, в одну сторону</dd></div>
+                <div><dt>Metromoney</dt><dd>2 GEL за карту</dd></div>
+                <div><dt>Городской транспорт</dt><dd>1 GEL за 90 минут</dd></div>
+                <div><dt>Национальная галерея</dt><dd>5 GEL взрослый · 0,5 GEL школьник</dd></div>
+                <div><dt>TPMM в Stamba</dt><dd>бесплатно</dd></div>
+              </dl>
+              <p>Цены и часы проверены 9 октября 2026; перед визитом лучше открыть официальный сайт ещё раз.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section class="section-shell section" id="hotels">
         <div class="section-heading">
           <div>
             <p class="eyebrow dark">Где живём</p>
-            <h2>Две брони готовы. Одна — выбирается.</h2>
+            <h2>Все три брони готовы.</h2>
           </div>
           <p>На публичной странице не храним PIN-коды и номера подтверждений.</p>
         </div>
@@ -142,19 +210,53 @@
             </div>
             <a href="https://www.google.com/maps/search/?api=1&query=Rooms+Hotel+Kazbegi" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
           </article>
-          <article class="hotel-card decision">
-            <div class="hotel-top"><span id="lastHotelDates">29–31 октября</span><em>Выбираем</em></div>
-            <h3>Последний Тбилиси</h3>
-            <div class="choice-list">
-              <button class="hotel-choice active" type="button" data-hotel="red">
-                <span><strong>Radisson RED</strong><small>Практично · просторнее · ровный район</small></span><b>RED</b>
-              </button>
-              <button class="hotel-choice" type="button" data-hotel="rooms">
-                <span><strong>Rooms Hotel Tbilisi</strong><small>Vera · атмосфера · рядом Stamba</small></span><b>ROOMS</b>
-              </button>
+          <article class="hotel-card confirmed city-card">
+            <div class="hotel-top"><span id="lastHotelDates">29–31 октября</span><em>Подтверждено</em></div>
+            <h3>Rooms Hotel Tbilisi</h3>
+            <p>Vera · 2 номера · без завтрака</p>
+            <ul><li>Garden View King Room</li><li>Garden View Twin Room</li><li>Рокки — запрос на лежанку и миски отправлен</li></ul>
+            <div class="booking-terms">
+              <strong>Бесплатная отмена до 27 октября</strong>
+              <span>При отмене в последние 2 дня — стоимость первой ночи.</span>
+              <span>При незаезде — полная стоимость брони.</span>
             </div>
-            <p class="choice-note" id="hotelChoiceNote"></p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rooms+Hotel+Tbilisi+14+Kostava" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
           </article>
+        </div>
+      </section>
+
+      <section class="shopping-section" id="shopping">
+        <div class="section-shell section">
+          <div class="section-heading">
+            <div><p class="eyebrow">Локальные находки</p><h2>Одежда, украшения и вино</h2></div>
+            <p>Большинство точек собраны вокруг Rooms и Vera, поэтому их легко добавить к прогулке 29 или 30 октября.</p>
+          </div>
+          <div class="shop-groups">
+            <section class="shop-group">
+              <header><span>01</span><div><h3>Одежда и аксессуары</h3><p>Современные грузинские дизайнеры</p></div></header>
+              <div class="shop-list">
+                <article><h4>MORE is LOVE</h4><p>Отбор местных и международных марок; здесь же сумки 0711 Tbilisi.</p><span>14 Leo Kiacheli · около 8 мин от Rooms · ежедневно 11:00–20:00</span><a href="https://www.moreislove.com/pages/contact-us" target="_blank" rel="noreferrer">Сайт ↗</a></article>
+                <article><h4>IERI Store</h4><p>Концепт-стор только с грузинскими дизайнерами: одежда, обувь, украшения и объекты.</p><span>1 Vasil Petriashvili · около 18 мин от Rooms</span><a href="https://www.google.com/maps/search/?api=1&query=IERI+Store+Tbilisi" target="_blank" rel="noreferrer">Карта ↗</a></article>
+                <article><h4>Flying Painter</h4><p>Носимое искусство, небольшие серии, необычные аксессуары и подарки.</p><span>8 Egnate Ninoshvili · Fabrika · около 10 мин на такси</span><a href="https://georgia.travel/souvenir-shops/the-flying-painter" target="_blank" rel="noreferrer">Описание ↗</a></article>
+              </div>
+            </section>
+            <section class="shop-group">
+              <header><span>02</span><div><h3>Украшения и дизайн</h3><p>Эмаль, керамика и вещи для дома</p></div></header>
+              <div class="shop-list">
+                <article><h4>Gallery 27</h4><p>Перегородчатая эмаль, украшения, текстиль и подарки грузинских мастеров; ещё и красивый старый дом.</p><span>3 Betlemi St · добавить к прогулке 25 октября</span><a href="https://georgia.travel/betlemi-st-3-tbilisi" target="_blank" rel="noreferrer">Описание ↗</a></article>
+                <article><h4>White Studio</h4><p>Авторская грузинская керамика, посуда, светильники и декоративные объекты.</p><span>18 Petriashvili · около 20 мин от Rooms</span><a href="https://georgia.travel/souvenir-shops/white-studio" target="_blank" rel="noreferrer">Описание ↗</a></article>
+                <article><h4>Ceramic Room</h4><p>Современная керамика с грузинским орнаментом: плитки, вазы, таблички и небольшие сувениры.</p><span>30 Barnovi · около 15 мин от Rooms</span><a href="https://georgia.travel/souvenir-shops/ceramic-room-shop" target="_blank" rel="noreferrer">Описание ↗</a></article>
+              </div>
+            </section>
+            <section class="shop-group wine-group">
+              <header><span>03</span><div><h3>Вино</h3><p>Бутылки домой и спокойная дегустация</p></div></header>
+              <div class="shop-list">
+                <article><h4>8000 Vintages</h4><p>Большой выбор грузинских вин и консультанты. Удобнее филиал на Tabukashvili после Руставели.</p><span>27 Revaz Tabukashvili · ежедневно примерно с 11:00</span><a href="https://8000vintages.ge" target="_blank" rel="noreferrer">Сайт ↗</a></article>
+                <article><h4>Wine Factory N1</h4><p>Историческая винная фабрика с несколькими барами, магазинами и ресторанами в одном дворе.</p><span>1 Vasil Petriashvili · около 18 мин от Rooms</span><a href="https://www.google.com/maps/search/?api=1&query=Wine+Factory+N1+Tbilisi" target="_blank" rel="noreferrer">Карта ↗</a></article>
+                <article><h4>Как выбирать</h4><p>Попросить сравнить классическую винификацию и qvevri, назвать желаемую сухость и бюджет. Для багажа — проверить лимит ввоза в Турцию перед поездкой.</p><span>Дегустацию лучше планировать после того, как Рокки вернулся в номер.</span></article>
+              </div>
+            </section>
+          </div>
         </div>
       </section>
 
@@ -236,7 +338,7 @@
     <footer>
       <div class="section-shell footer-inner">
         <div><strong>Georgia · family trip</strong><span>Черновик семейного плана</span></div>
-        <p>Последнее обновление: 8 октября 2026</p>
+        <p>Последнее обновление: 9 октября 2026</p>
       </div>
     </footer>
 
@@ -245,6 +347,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=9"></script>
   </body>
 </html>
