@@ -48,9 +48,9 @@ a { color: inherit; }
 .nav a:hover { opacity: 1; }
 .print-button { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.36); color: white; border-radius: 999px; padding: 9px 16px; cursor: pointer; }
 
-.hero { min-height: 760px; height: 92vh; position: relative; overflow: hidden; color: white; background: #28475a; }
-.hero > img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,25,25,.78) 0%, rgba(15,25,25,.38) 46%, rgba(15,25,25,.05) 76%), linear-gradient(0deg, rgba(15,25,25,.5), transparent 36%); }
+.hero { min-height: 760px; height: 92vh; position: relative; overflow: hidden; color: white; background: #203b49; }
+.hero > img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; position: absolute; inset: 0; display: block; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,24,25,.88) 0%, rgba(12,24,25,.64) 34%, rgba(12,24,25,.2) 68%, rgba(12,24,25,.08) 100%), linear-gradient(0deg, rgba(12,24,25,.58), transparent 40%); }
 .hero-copy { position: relative; z-index: 2; padding: 156px max(32px, calc((100vw - 1180px)/2)); max-width: 850px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 800; margin: 0 0 18px; }
 .eyebrow.dark { color: var(--wine); }
@@ -330,6 +330,7 @@ footer { border-top: 1px solid var(--line); padding-block: 30px; }
   .topbar { padding: 0 16px; }
   .print-button { display: none; }
   .hero { height: 90vh; min-height: 660px; }
+  .hero > img { object-position: 56% center; }
   .hero-copy { padding: 125px 20px; }
   h1 { font-size: 64px; }
   .hero-lead { font-size: 17px; max-width: 88%; }
