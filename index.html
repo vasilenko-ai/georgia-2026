@@ -7,7 +7,7 @@
     <title>Грузия · семейное путешествие</title>
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body>
     <header class="topbar">
@@ -18,8 +18,9 @@
       <nav class="nav" aria-label="Навигация">
         <a href="#calendar">Календарь</a>
         <a href="#route">Маршрут</a>
-        <a href="#tbilisi-guide">Тбилиси по дням</a>
+        <a href="#tbilisi-guide">Планы по дням</a>
         <a href="#hotels">Отели</a>
+        <a href="#insurance">Страховки</a>
         <a href="#shopping">Магазины</a>
         <a href="#rocky">Рокки</a>
         <a href="#packing">Вещи</a>
@@ -49,7 +50,7 @@
         <article><span class="summary-icon">✦</span><div><strong>8 дней</strong><small>24–31 октября</small></div></article>
         <article><span class="summary-icon">◌</span><div><strong>4 путешественника</strong><small>Олег, Маша, Миша и Алексей</small></div></article>
         <article><span class="summary-icon">🐾</span><div><strong>Рокки с нами</strong><small>6 кг · путешествует в салоне</small></div></article>
-        <article><span class="summary-icon">⌁</span><div><strong>2 сценария</strong><small>3 или 2 ночи в Казбеги</small></div></article>
+        <article><span class="summary-icon">⌁</span><div><strong>План подтверждён</strong><small>2 ночи в Казбеги · 3 в Vera</small></div></article>
       </section>
 
       <section class="section-shell section" id="calendar">
@@ -63,23 +64,23 @@
         <div class="calendar-strip" id="calendarStrip" role="list"></div>
       </section>
 
-      <section class="scenario-band" aria-labelledby="scenarioTitle">
+      <section class="scenario-band" aria-labelledby="programTitle">
         <div class="section-shell scenario-inner">
           <div>
-            <p class="eyebrow">План можно менять</p>
-            <h2 id="scenarioTitle">Сколько ночей оставить горам?</h2>
+            <p class="eyebrow">Финальная версия</p>
+            <h2 id="programTitle">Программа с местным агентством</h2>
           </div>
-          <div class="scenario-switch" role="group" aria-label="Сценарий поездки">
-            <button class="scenario-button active" type="button" data-scenario="full">
-              <strong>Основной</strong>
-              <span>Казбеги до четверга · 3 ночи</span>
-            </button>
-            <button class="scenario-button" type="button" data-scenario="short">
-              <strong>Сокращённый</strong>
-              <span>Возвращение в среду · 2 ночи</span>
-            </button>
+          <div class="scenario-switch" aria-label="Согласованная программа">
+            <div class="program-card">
+              <strong>Казбеги · 26–28 октября</strong>
+              <span>Гид по Военно-Грузинской дороге, затем день отдыха и возвращение через Сно по желанию.</span>
+            </div>
+            <div class="program-card">
+              <strong>Мцхета · 29 октября</strong>
+              <span>Джвари, Светицховели, семейная винодельня и факультативное Уплисцихе.</span>
+            </div>
           </div>
-          <p class="scenario-note" id="scenarioNote"></p>
+          <p class="scenario-note">Агентство также встречает в аэропорту 24 октября и отвозит обратно 31 октября.</p>
         </div>
       </section>
 
@@ -115,7 +116,7 @@
         <div class="section-shell section">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Тбилиси по дням</p>
+              <p class="eyebrow">Тбилиси и окрестности</p>
               <h2>Маршруты без гонки</h2>
             </div>
             <p>Время ходьбы указано без остановок. На прогулки с видами, кофе и фотографиями лучше закладывать в два-три раза больше.</p>
@@ -138,12 +139,12 @@
               <p class="guide-note">Галерея: 5 GEL взрослый, 0,5 GEL школьник; семье ≈ 11 GEL. Воскресенье 10:00–18:00, вход до 17:30. Животные запрещены.</p>
             </article>
             <article class="guide-card">
-              <div class="guide-date"><strong>29</strong><span>четверг · вечер</span></div>
-              <h3>Вера после дороги</h3>
-              <p class="guide-route">Rooms → ул. Киачели → Wine Factory N1 → ул. Петриашвили → Rooms</p>
-              <div class="guide-metrics"><span>2,2 км</span><span>35 мин пешком</span><span>1,5–2 часа</span></div>
-              <ol><li>Заселиться и дать Рокки отдохнуть после переезда.</li><li>Пройти по тихим улицам Vera до исторической винной фабрики.</li><li>Посмотреть IERI и White Studio, если магазины ещё открыты.</li></ol>
-              <p class="guide-note">Бесплатная прогулка · удобно пройти с Рокки; дегустацию оставить взрослым по очереди.</p>
+              <div class="guide-date"><strong>29</strong><span>четверг · экскурсия с гидом</span></div>
+              <h3>Мцхета и семейная винодельня</h3>
+              <p class="guide-route">Rooms → Джвари → Светицховели → семейная винодельня → Rooms</p>
+              <div class="guide-metrics"><span>целый день</span><span>частная машина</span><span>обед и дегустация</span></div>
+              <ol><li>Вид на слияние Куры и Арагви от монастыря Джвари.</li><li>Прогулка по Мцхете и храм Светицховели.</li><li>Экскурсия, обед и дегустация на семейной винодельне.</li><li>Уплисцихе — только как заранее согласованная дополнительная опция.</li></ol>
+              <p class="guide-note">Название винодельни и возможность приехать с Рокки нужно подтвердить у агентства.</p>
             </article>
             <article class="guide-card featured">
               <div class="guide-date"><strong>30</strong><span>пятница · документы и город</span></div>
@@ -199,29 +200,46 @@
             <a href="https://www.google.com/maps/search/?api=1&query=Kisi+Boutique+Hotel+Tbilisi" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
           </article>
           <article class="hotel-card confirmed mountain-card">
-            <div class="hotel-top"><span id="kazbegiHotelDates">26–29 октября</span><em class="status-review">Число ночей уточняем</em></div>
+            <div class="hotel-top"><span>26–28 октября</span><em>Подтверждено</em></div>
             <h3>Rooms Hotel Kazbegi</h3>
             <p>Степанцминда · Mountain View · завтрак</p>
             <ul><li>Double Mountain View</li><li>Twin Mountain View</li><li>Рокки — в Double Room</li></ul>
             <div class="booking-terms">
-              <strong>Бесплатная отмена до 23 окт · 23:59</strong>
-              <span>Время отеля. С 24 октября — стоимость первой ночи.</span>
-              <span>Изменение — через Booking, по доступности; лучше до этого срока.</span>
+              <strong>Бесплатная отмена — не позднее чем за 2 дня до заезда</strong>
+              <span>После этого — стоимость первой ночи.</span>
+              <span>В Special Request ещё указан старый срок в 3 ночи — сообщить отелю об изменении.</span>
             </div>
             <a href="https://www.google.com/maps/search/?api=1&query=Rooms+Hotel+Kazbegi" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
           </article>
           <article class="hotel-card confirmed city-card">
-            <div class="hotel-top"><span id="lastHotelDates">29–31 октября</span><em>Подтверждено</em></div>
+            <div class="hotel-top"><span>28–31 октября</span><em>Подтверждено</em></div>
             <h3>Rooms Hotel Tbilisi</h3>
-            <p>Vera · 2 номера · без завтрака</p>
+            <p>Vera · 2 номера · завтрак включён</p>
             <ul><li>Garden View King Room</li><li>Garden View Twin Room</li><li>Рокки — запрос на лежанку и миски отправлен</li></ul>
             <div class="booking-terms">
-              <strong>Бесплатная отмена до 27 октября</strong>
+              <strong>Бесплатная отмена — не позднее чем за 2 дня до заезда</strong>
               <span>При отмене в последние 2 дня — стоимость первой ночи.</span>
-              <span>При незаезде — полная стоимость брони.</span>
+              <span>В брони пока указаны 3 гостя — добавить Алексея и подтвердить детский завтрак.</span>
             </div>
             <a href="https://www.google.com/maps/search/?api=1&query=Rooms+Hotel+Tbilisi+14+Kostava" target="_blank" rel="noreferrer">Открыть на карте ↗</a>
           </article>
+        </div>
+      </section>
+
+      <section class="insurance-section" id="insurance">
+        <div class="section-shell section insurance-layout">
+          <div class="insurance-copy">
+            <p class="eyebrow">Документы для въезда</p>
+            <h2>Страховки оформлены на всех четверых.</h2>
+            <p>Отдельные туристические полисы GPI Holding действуют на весь срок поездки и соответствуют обязательным правилам въезда в Грузию.</p>
+          </div>
+          <div class="insurance-facts">
+            <article><span>Срок</span><strong>24–31 октября</strong><small>обе даты включены</small></article>
+            <article><span>Покрытие</span><strong>100 000 GEL</strong><small>на каждого путешественника</small></article>
+            <article><span>Франшиза</span><strong>100 GEL</strong><small>по каждому полису</small></article>
+            <article><span>Статус</span><strong>4 полиса готовы</strong><small>Олег, Маша, Миша и Алексей</small></article>
+          </div>
+          <p class="insurance-note">В публичную версию сайта не загружаем сами PDF: в них содержатся паспортные данные. Сохранить копии в телефонах и взять распечатки в ручную кладь.</p>
         </div>
       </section>
 
@@ -229,7 +247,7 @@
         <div class="section-shell section">
           <div class="section-heading">
             <div><p class="eyebrow">Локальные находки</p><h2>Одежда, украшения и вино</h2></div>
-            <p>Большинство точек собраны вокруг Rooms и Vera, поэтому их легко добавить к прогулке 29 или 30 октября.</p>
+            <p>Большинство точек собраны вокруг Rooms и Vera, поэтому их легко добавить к вечеру 28-го или прогулке 30 октября.</p>
           </div>
           <div class="shop-groups">
             <section class="shop-group">
@@ -338,7 +356,7 @@
     <footer>
       <div class="section-shell footer-inner">
         <div><strong>Georgia · family trip</strong><span>Черновик семейного плана</span></div>
-        <p>Последнее обновление: 9 октября 2026</p>
+        <p>Последнее обновление: 21 октября 2026</p>
       </div>
     </footer>
 
@@ -347,6 +365,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="app.js?v=9"></script>
+    <script src="app.js?v=10"></script>
   </body>
 </html>
