@@ -95,6 +95,9 @@ h3 { font-size: 30px; line-height: 1.1; }
 .scenario-button.active { background: var(--white); color: var(--forest); }
 .scenario-note { grid-column: 2; margin: -25px 0 0; color: rgba(255,255,255,.7); font-size: 14px; }
 .scenario-button.active span { opacity: .7; }
+.program-card { color: white; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); padding: 20px; border-radius: 18px; }
+.program-card strong, .program-card span { display: block; }
+.program-card span { margin-top: 7px; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.45; }
 
 .text-button { border: 0; background: transparent; color: var(--wine); text-decoration: underline; cursor: pointer; }
 .route-layout { display: grid; grid-template-columns: 1.45fr .8fr; gap: 18px; min-height: 610px; }
@@ -173,6 +176,18 @@ h3 { font-size: 30px; line-height: 1.1; }
 
 .hotel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .hotel-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; min-height: 390px; display: flex; flex-direction: column; }
+
+.insurance-section { background: var(--blue); color: white; }
+.insurance-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 32px 64px; align-items: center; }
+.insurance-copy h2 { margin: 10px 0 16px; }
+.insurance-copy p:last-child { color: rgba(255,255,255,.72); max-width: 540px; }
+.insurance-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.insurance-facts article { min-height: 130px; padding: 20px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.07); }
+.insurance-facts span, .insurance-facts strong, .insurance-facts small { display: block; }
+.insurance-facts span { color: rgba(255,255,255,.6); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
+.insurance-facts strong { margin-top: 13px; font-family: Georgia, serif; font-size: 25px; font-weight: 500; }
+.insurance-facts small { margin-top: 6px; color: rgba(255,255,255,.68); }
+.insurance-note { grid-column: 1 / -1; margin: 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.72); font-size: 13px; }
 .hotel-card.mountain-card { background: var(--blue); color: white; }
 .hotel-top { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
 .hotel-top em { font-style: normal; font-weight: 800; color: var(--forest); background: #dbeadf; padding: 6px 9px; border-radius: 999px; }
@@ -297,13 +312,14 @@ footer { border-top: 1px solid var(--line); padding-block: 30px; }
   .summary { grid-template-columns: 1fr 1fr; }
   .summary article:nth-child(2) { border-right: 0; }
   .summary article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .scenario-inner, .route-layout, .rocky-layout { grid-template-columns: 1fr; }
+  .scenario-inner, .route-layout, .rocky-layout, .insurance-layout { grid-template-columns: 1fr; }
   .scenario-note { grid-column: 1; margin-top: -20px; }
   .route-layout { min-height: 0; }
   .map-card { min-height: 480px; }
   .hotel-grid { grid-template-columns: 1fr; }
   .hotel-card { min-height: 320px; }
   .guide-grid { grid-template-columns: 1fr; }
+  .insurance-facts { grid-template-columns: 1fr 1fr; }
   .shop-group { grid-template-columns: 1fr; }
   .packing-board { grid-template-columns: 1fr; }
   .packing-pool { min-height: 0; }
@@ -333,6 +349,8 @@ footer { border-top: 1px solid var(--line); padding-block: 30px; }
   .guide-card, .guide-prices { padding: 22px; }
   .shop-group { padding: 20px; }
   .shop-list { grid-template-columns: 1fr; }
+  .insurance-facts { grid-template-columns: 1fr; }
+  .insurance-facts article { min-height: 110px; }
   .packing-heading { display: flex; align-items: end; }
   .packing-progress { min-width: 128px; }
   .packing-add { flex-wrap: wrap; }
@@ -345,7 +363,7 @@ footer { border-top: 1px solid var(--line); padding-block: 30px; }
 }
 
 @media print {
-  .topbar, .hero-actions, .scenario-switch, .text-button, .map-card, .print-button { display: none !important; }
+  .topbar, .hero-actions, .text-button, .map-card, .print-button { display: none !important; }
   .hero { height: 360px; min-height: 0; }
   .hero-copy { padding: 90px 40px; }
   h1 { font-size: 58px; }
