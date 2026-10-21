@@ -24,6 +24,7 @@ const places = {
   gveleti: { name: "Гвелетский водопад", coords: [42.7047, 44.6152], category: "walk", icon: "💧" },
   jvari: { name: "Монастырь Джвари", coords: [41.8385, 44.7331], category: "sight", icon: "⛪", major: true },
   mtskheta: { name: "Мцхета", coords: [41.8427, 44.7206], category: "sight", icon: "M", major: true },
+  uplistsikhe: { name: "Уплисцихе", coords: [41.9668, 44.2071], category: "sight", icon: "U", major: true },
   roomsTbilisi: { name: "Rooms Hotel Tbilisi", coords: [41.7064, 44.7894], category: "hotel", icon: "R", major: true },
   stamba: { name: "Stamba / Photography Museum", coords: [41.7067, 44.7890], category: "walk", icon: "▣", major: true },
   vera: { name: "Vera", coords: [41.7092, 44.7865], category: "walk", icon: "•" },
@@ -47,8 +48,8 @@ const sharedDays = {
     dow: "суббота", date: "24", place: "Тбилиси", short: "Прилёт и тихий вечер", kind: "city",
     summary: "Первый вечер без спешки: получить багаж, пройти контроль с Рокки и спокойно заселиться в Kisi.",
     routes: [{ mode: "travel", label: "Аэропорт → Kisi", points: ["airport", "kisi"] }, { mode: "walk", label: "Вечерняя петля · 1,8 км", points: ["kisi", "abanotubani", "waterfall", "meidan", "kisi"] }],
-    timeline: [["13:20", "Вылет из IST", "Turkish Airlines"], ["16:40", "Прилёт в TBS", "Граница, багаж и документы Рокки"], ["19:15", "Заселение в Kisi", "От аэропорта 25–40 минут на машине"], ["20:00", "Первый круг по Старому городу", "1,8 км · 35 минут чистой ходьбы · бесплатно"]],
-    tags: ["✈️ перелёт", "🐕 Рокки с нами", "🏨 Kisi"],
+    timeline: [["13:20", "Вылет из IST", "Turkish Airlines"], ["16:40", "Прилёт в TBS", "Граница, багаж и документы Рокки"], ["после прилёта", "Трансфер агентства", "Водитель встречает в аэропорту и отвозит в Kisi"], ["20:00", "Первый круг по Старому городу", "1,8 км · 35 минут чистой ходьбы · бесплатно"]],
+    tags: ["✈️ перелёт", "🚐 трансфер агентства", "🐕 Рокки с нами", "🏨 Kisi"],
   },
   "2026-10-25": {
     dow: "воскресенье", date: "25", place: "Тбилиси", short: "Старый город", kind: "city",
@@ -61,15 +62,29 @@ const sharedDays = {
     dow: "понедельник", date: "26", place: "Дорога в Казбеги", short: "Ананури и Гудаури", kind: "road",
     summary: "Путешествие по Военно-Грузинской дороге — это уже полноценный день маршрута, а не просто трансфер.",
     routes: [{ mode: "travel", label: "Военно-Грузинская дорога", points: ["kisi", "zhinvali", "ananuri", "gudauri", "roomsKazbegi"] }],
-    timeline: [["09:00", "Выезд из Тбилиси", "Частный водитель, Рокки и лёгкий багаж"], ["11:00", "Жинвали и Ананури", "Прогулка и фотографии"], ["13:30", "Гудаури", "Обед и Арка Дружбы"], ["16:30", "Rooms Kazbegi", "Заселение, бассейн и ужин"]],
-    tags: ["🚗 5–7 часов", "🐕 Рокки с нами", "🏨 Rooms Kazbegi"],
+    timeline: [["утро", "Выезд из Тбилиси с гидом", "Начало поездки по Военно-Грузинской дороге"], ["по пути", "Жинвали и Ананури", "Водохранилище, крепость, прогулка и фотографии"], ["после обеда", "Гудаури", "Арка Дружбы и горные виды"], ["вечер", "Rooms Kazbegi", "Заселение, бассейн и ужин"]],
+    tags: ["👤 гид", "🚗 Военно-Грузинская дорога", "🐕 Рокки с нами", "🏨 Rooms Kazbegi"],
   },
   "2026-10-27": {
-    dow: "вторник", date: "27", place: "Казбеги", short: "Гергети", kind: "mountain",
-    summary: "Лучшее погодное окно отдаём главному виду поездки — Гергети и Казбеку.",
+    dow: "вторник", date: "27", place: "Казбеги", short: "День отдыха", kind: "mountain",
+    summary: "Свободный день в Rooms Kazbegi: отдыхаем и решаем по погоде, нужен ли самостоятельный выезд к Гергети.",
     routes: [{ mode: "local", label: "Подъём к Гергети", points: ["roomsKazbegi", "stepantsminda", "gergeti"] }, { mode: "walk", label: "Пешая часть", points: ["stepantsminda", "gergeti"] }],
-    timeline: [["09:30", "Подъём к Гергети", "Местный 4×4; при сухой погоде часть пути пешком"], ["13:00", "Обед в Степанцминде", "Спокойный темп и прогулка"], ["16:00", "Отель и бассейн", "Резерв на перемену погоды"]],
-    tags: ["🏔 погода A", "🐕 уточнить 4×4", "🏊 бассейн"],
+    timeline: [["утро", "Поздний завтрак и отдых", "Терраса, виды и спокойный темп"], ["по погоде", "Опция: церковь Гергети", "Не входит в программу агентства; организовать на месте"], ["день", "Степанцминда или бассейн", "Без обязательной программы и раннего подъёма"]],
+    tags: ["🛋 свободный день", "🏔 Гергети опционально", "🏊 бассейн"],
+  },
+  "2026-10-28": {
+    dow: "среда", date: "28", place: "В Тбилиси", short: "Возвращение через Сно", kind: "road",
+    summary: "Трансфер агентства из Казбеги в Тбилиси; по желанию делаем короткий заезд к каменным головам в Сно.",
+    routes: [{ mode: "travel", label: "Казбеги → Сно → Rooms Tbilisi", points: ["roomsKazbegi", "sno", "roomsTbilisi"] }],
+    timeline: [["до 12:00", "Check-out из Rooms Kazbegi", "Завтрак и спокойные сборы"], ["по желанию", "Сно и каменные головы", "Короткая остановка по пути"], ["после 14:00", "Rooms Hotel Tbilisi", "Заселение · Garden View King + Twin"], ["вечер", "Свободная Vera", "Ужин рядом с отелем и отдых"]],
+    tags: ["🚐 трансфер агентства", "🗿 Сно опционально", "🏨 Rooms Tbilisi"],
+  },
+  "2026-10-29": {
+    dow: "четверг", date: "29", place: "Мцхета", short: "Храмы и винодельня", kind: "road",
+    summary: "Экскурсионный день с гидом: Джвари, Светицховели, семейная винодельня, обед и дегустация.",
+    routes: [{ mode: "travel", label: "Rooms → Джвари → Мцхета → Rooms", points: ["roomsTbilisi", "jvari", "mtskheta", "roomsTbilisi"] }, { mode: "local", label: "Опция: Уплисцихе", points: ["mtskheta", "uplistsikhe", "roomsTbilisi"] }],
+    timeline: [["утро", "Выезд из Rooms с гидом", "Частная машина на весь день"], ["до обеда", "Джвари и Светицховели", "Экскурсия и прогулка по Мцхете"], ["после обеда", "Семейная винодельня", "Экскурсия, обед и дегустация"], ["опция", "Уплисцихе", "Добавлять только после подтверждения длительности дня"]],
+    tags: ["👤 гид", "⛪ Мцхета", "🍷 винодельня", "🏛 Уплисцихе опционально"],
   },
   "2026-10-30": {
     dow: "пятница", date: "30", place: "Тбилиси", short: "NFA и Vera", kind: "city",
@@ -82,38 +97,17 @@ const sharedDays = {
     dow: "суббота", date: "31", place: "Домой", short: "TBS → IST", kind: "flight",
     summary: "Неспешное утро, последний обед и ранний выезд в аэропорт с запасом на оформление PETC.",
     routes: [{ mode: "walk", label: "Утренняя петля · 3 км", points: ["roomsTbilisi", "veraPark", "vera", "roomsTbilisi"] }, { mode: "travel", label: "Rooms → аэропорт TBS", points: ["roomsTbilisi", "airport"] }],
-    timeline: [["08:00", "Пробежка или прогулка", "Парк Вера · около 3 км · Рокки с нами"], ["10:00", "Завтрак и последний кофе", "Check-out до 12:00; багаж оставить в отеле"], ["14:15", "Выезд в аэропорт", "Дорога 30–45 минут; запас на PETC около трёх часов"], ["18:00", "Вылет в Стамбул", "Прилёт в IST в 19:30"]],
-    tags: ["✈️ перелёт", "🐕 PETC", "🏠 домой"],
+    timeline: [["08:00", "Пробежка или прогулка", "Парк Вера · около 3 км · Рокки с нами"], ["10:00", "Завтрак и последний кофе", "Check-out до 12:00; багаж оставить в отеле"], ["14:15", "Трансфер агентства в аэропорт", "Дорога 30–45 минут; запас на PETC около трёх часов"], ["18:00", "Вылет в Стамбул", "Прилёт в IST в 19:30"]],
+    tags: ["🚐 трансфер агентства", "✈️ перелёт", "🐕 PETC", "🏠 домой"],
   },
 };
-
-const scenarios = {
-  full: {
-    note: "Три ночи дают два шанса на хорошую погоду. Мцхета и Джвари удобно ложатся на обратную дорогу в четверг.",
-    kazbegiDates: "26–29 октября", lastHotelDates: "29–31 октября",
-    days: {
-      "2026-10-28": { dow: "среда", date: "28", place: "Казбеги", short: "Погодный резерв", kind: "mountain", summary: "Второй горный день: Дарьяли и Гвелети при сухой тропе либо Сно и неспешный отдых.", routes: [{ mode: "local", label: "Дарьяли и Гвелети", points: ["roomsKazbegi", "gveleti", "dariali"] }, { mode: "walk", label: "Тропа к водопаду", points: ["gveleti", "dariali"] }, { mode: "local", label: "Альтернатива: Сно", points: ["roomsKazbegi", "sno"] }], timeline: [["10:00", "Выбираем по погоде", "Дарьяльское ущелье и Гвелети или Сно"], ["14:00", "Обед", "Кафе в Степанцминде"], ["16:00", "Свободное время", "Вид, бассейн и книги у камина"]], tags: ["🌦 погода B", "🐕 прогулка", "🔥 спокойный день"] },
-      "2026-10-29": { dow: "четверг", date: "29", place: "В Тбилиси", short: "Мцхета и Джвари", kind: "road", summary: "Возвращаемся без спешки, заселяемся в Rooms и вечером знакомимся с Vera.", routes: [{ mode: "travel", label: "Казбеги → Мцхета → Rooms", points: ["roomsKazbegi", "jvari", "mtskheta", "roomsTbilisi"] }, { mode: "walk", label: "Вечерняя Vera · 2,2 км", points: ["roomsTbilisi", "moreIsLove", "wineFactory", "ieri", "whiteStudio", "roomsTbilisi"] }], timeline: [["09:30", "Выезд из Казбеги", "Частный водитель"], ["13:00", "Джвари и Мцхета", "Прогулка и обед"], ["17:00", "Rooms Hotel Tbilisi", "Заселение · King + Twin Garden View"], ["18:30", "Vera с Рокки", "Wine Factory N1 и Petriashvili · 2,2 км, около 35 минут ходьбы"]], tags: ["🚗 переезд", "⛪ Мцхета", "🏨 Rooms Tbilisi", "🐕 прогулка"] },
-    },
-  },
-  short: {
-    note: "Две ночи — компактнее и дешевле, но на Гергети остаётся только одно полноценное погодное окно. В Тбилиси появляется дополнительный день.",
-    kazbegiDates: "26–28 октября", lastHotelDates: "28–31 октября",
-    days: {
-      "2026-10-28": { dow: "среда", date: "28", place: "В Тбилиси", short: "Мцхета и Джвари", kind: "road", summary: "Утром используем последний погодный шанс, затем едем через Джвари и Мцхету в Тбилиси.", routes: [{ mode: "local", label: "Резерв: Гергети", points: ["roomsKazbegi", "gergeti"] }, { mode: "travel", label: "Казбеги → Rooms Tbilisi", points: ["roomsKazbegi", "jvari", "mtskheta", "roomsTbilisi"] }], timeline: [["09:00", "Резерв на Гергети", "Только если вторник был облачным"], ["11:00", "Выезд из Казбеги", "Остановки по дороге"], ["15:00", "Джвари и Мцхета", "Короткая прогулка и поздний обед"], ["18:30", "Rooms Hotel Tbilisi", "Заселение и отдых"]], tags: ["🚗 переезд", "🌦 короткий резерв", "🏨 Rooms Tbilisi"] },
-      "2026-10-29": { dow: "четверг", date: "29", place: "Тбилиси", short: "Город без спешки", kind: "city", summary: "Дополнительный день: Vera с Рокки, Национальная галерея и магазины локальных дизайнеров.", routes: [{ mode: "walk", label: "Утро с Рокки · 2 км", points: ["roomsTbilisi", "veraPark", "wineFactory", "roomsTbilisi"] }, { mode: "local", label: "Галерея и Сололаки", points: ["roomsTbilisi", "nationalGallery", "gudiashvili", "gallery27", "meidan"] }], timeline: [["09:00", "Пробежка и завтрак", "Vera Park и тихие улицы · Рокки с нами"], ["11:30", "Национальная галерея", "1–1,5 часа · семья ≈ 11 GEL · без Рокки"], ["14:00", "Sololaki и Gallery 27", "Парадные, локальные украшения и кофе"], ["17:00", "Wine Factory N1", "Вернуться к Rooms пешком или на такси"]], tags: ["🏙 дополнительный город", "🐕 прогулка", "🎨 музей", "🍷 гастрономия"] },
-    },
-  },
-};
-
-let currentScenario = "full";
 let selectedDate = "2026-10-24";
 let selectedMapDay = null;
 let activeMapFilter = "all";
 let map;
 let layerGroup;
 
-function allDays() { return { ...sharedDays, ...scenarios[currentScenario].days }; }
+function allDays() { return sharedDays; }
 
 function initMap() {
   if (!window.L) {
@@ -209,18 +203,6 @@ function selectDay(key, scroll = false) {
   if (scroll) document.getElementById("route").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function setScenario(name) {
-  currentScenario = name;
-  document.querySelectorAll(".scenario-button").forEach((button) => button.classList.toggle("active", button.dataset.scenario === name));
-  document.getElementById("scenarioNote").textContent = scenarios[name].note;
-  document.getElementById("kazbegiHotelDates").textContent = scenarios[name].kazbegiDates;
-  document.getElementById("lastHotelDates").textContent = scenarios[name].lastHotelDates;
-  if (!allDays()[selectedDate]) selectedDate = "2026-10-28";
-  renderCalendar();
-  renderDayPanel();
-  renderMap(selectedDate);
-}
-
 function syncMapFilters() {
   document.querySelectorAll(".map-filter").forEach((button) => button.classList.toggle("active", button.dataset.filter === activeMapFilter));
 }
@@ -236,6 +218,7 @@ const defaultPackingItems = [
   ["passports", "🛂", "Паспорта всей семьи"],
   ["tickets", "✈️", "Билеты и посадочные"],
   ["bookings", "🏨", "Подтверждения отелей"],
+  ["insurance", "🛡️", "Страховки GPI на всех четверых"],
   ["rocky-docs", "🐕", "Документы Рокки"],
   ["cards", "💳", "Карты и немного наличных"],
   ["medicine", "🩹", "Семейная аптечка"],
@@ -275,7 +258,12 @@ let selectedPackingItem = null;
 function loadPackingItems() {
   try {
     const saved = JSON.parse(localStorage.getItem(packingStorageKey));
-    packingItems = Array.isArray(saved) && saved.length ? saved : structuredClone(defaultPackingItems);
+    if (Array.isArray(saved) && saved.length) {
+      const savedIds = new Set(saved.map((item) => item.id));
+      packingItems = [...saved, ...defaultPackingItems.filter((item) => !savedIds.has(item.id))];
+    } else {
+      packingItems = structuredClone(defaultPackingItems);
+    }
   } catch {
     packingItems = structuredClone(defaultPackingItems);
   }
@@ -393,7 +381,6 @@ function initPacking() {
   renderPacking();
 }
 
-document.querySelectorAll(".scenario-button").forEach((button) => button.addEventListener("click", () => setScenario(button.dataset.scenario)));
 document.getElementById("showAllButton").addEventListener("click", () => {
   document.getElementById("routeHeading").textContent = "Вся поездка";
   selectedMapDay = null;
@@ -412,7 +399,6 @@ document.getElementById("printButton").addEventListener("click", () => window.pr
 
 renderCalendar();
 renderDayPanel();
-setScenario("full");
 initCountdown();
 initPacking();
 initMap();
