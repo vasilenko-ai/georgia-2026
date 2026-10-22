@@ -151,6 +151,10 @@ h3 { font-size: 30px; line-height: 1.1; }
 
 .city-guide { background: var(--forest); color: white; }
 .city-guide .section-heading > p { color: rgba(255,255,255,.67); }
+.traffic-alert { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; margin: -12px 0 28px; padding: 20px 22px; border: 1px solid rgba(240,211,157,.42); border-radius: 18px; background: rgba(240,211,157,.1); }
+.traffic-alert-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: #f0d39d; color: var(--forest); font-weight: 900; }
+.traffic-alert strong { display: block; color: #f7dfb2; }
+.traffic-alert p { margin: 5px 0 0; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.55; }
 .guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .guide-card, .guide-prices { border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); padding: 28px; background: rgba(255,255,255,.055); }
 .guide-card.featured { background: var(--white); color: var(--ink); }
